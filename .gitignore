@@ -207,8 +207,8 @@ marimo/_lsp/
 __marimo__/
 
 # Custom
-GEMINI.md
-GITHUB.md
-.github/
+# GEMINI.md
+# GITHUB.md
+# .github/
 
-course_material/
+# course_material/
