@@ -14,9 +14,12 @@ Coursework for **Data Analysis 3: Prediction and Machine Learning** at Central E
 │   ├── class-15-regression-trees/
 │   └── class-16-random-forest-and-boosting/
 ├── data/
-│   └── raw/                   # Airbnb listings data
-│       ├── copenhagen_listings.csv
-│       └── oslo_listings.csv
+│   └── raw/                   # Airbnb listings data (downloaded via script)
+│       ├── copenhagen_listings_2025_03_train.csv
+│       ├── copenhagen_listings_2025_09_test.csv
+│       └── oslo_listings_2025_09_test.csv
+├── scripts/
+│   └── fetch_data.py          # Download data from Inside Airbnb
 ├── pyproject.toml             # Project dependencies (uv)
 └── requirements.txt           # Pinned dependencies
 ```
@@ -67,25 +70,9 @@ This project uses [uv](https://docs.astral.sh/uv/) for dependency management.
 - Gradient Boosting
 
 **Data:**
-- Training: Copenhagen Airbnb listings (~9,000 observations)
-- Temporal validation: Copenhagen holdout (30%)
-- Spatial validation: Oslo listings (~8,000 observations)
-
-**Key findings:**
-- Gradient Boosting achieves best temporal validation (RMSE: 514)
-- LASSO achieves best spatial validation (RMSE: 622)
-- Top predictors: accommodates, beds, bathrooms, room type
-
-## Dependencies
-
-| Package | Version | Purpose |
-|---------|---------|---------|
-| pandas | ≥3.0.0 | Data manipulation |
-| numpy | ≥2.4.2 | Numerical computing |
-| scikit-learn | ≥1.8.0 | ML models (LASSO, Ridge, RF, GB) |
-| statsmodels | ≥0.14.6 | OLS regression |
-| matplotlib | ≥3.10.8 | Visualization |
-| seaborn | ≥0.13.2 | Statistical plots |
+- Training: Copenhagen March 2025 (Inside Airbnb scrape)
+- Temporal validation: Copenhagen September 2025 (6 months later, same city)
+- Spatial validation: Oslo September 2025 (same time, different city)
 
 ## License
 
